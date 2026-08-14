@@ -82,6 +82,7 @@ body {
   align-items: center;
 }
 .logo svg { width: 30px; height: 30px; display: block; }
+.logo img { width: 34px; height: 34px; display: block; object-fit: contain; }
 
 .topbar h1 {
   font-size: 18px;
