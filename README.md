@@ -1,14 +1,27 @@
-# Aletheia
+<p align="center">
+  <img src="docs/aletheia-icon.png" alt="Aletheia" width="128" />
+</p>
 
-[![CI](https://github.com/rA9-001/Aletheia/actions/workflows/ci.yml/badge.svg)](https://github.com/rA9-001/Aletheia/actions/workflows/ci.yml)
+<h1 align="center">Aletheia</h1>
 
-**A local desktop app that shows you which sites your browsers keep you logged
-into, which sites hold saved passwords, and how much cache each profile uses —
-and lets you clean any of it up.**
+<p align="center">
+  A local desktop app that shows which sites your browsers keep you logged into,
+  which hold saved passwords, and how much each profile caches — and lets you
+  clean any of it up.<br/>
+  Runs entirely on your machine. No network. No telemetry.
+</p>
 
-Everything runs on your machine. Aletheia makes **no network calls**, has no
-telemetry, and **never reads, decrypts, or transmits** your passwords or cookie
-*values* — it works only from cookie **names**, flags, and metadata.
+<p align="center">
+  <a href="https://github.com/rA9-001/Aletheia/actions/workflows/ci.yml"><img src="https://github.com/rA9-001/Aletheia/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <img src="https://img.shields.io/badge/platform-Linux%20%7C%20Windows-lightgrey" alt="Platform" />
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License" />
+</p>
+
+---
+
+Aletheia **never reads, decrypts, or transmits** your passwords or cookie
+*values* — it works only from cookie names, flags, and metadata, and it makes no
+network calls of any kind.
 
 <!-- Add a screenshot from a throwaway/example profile:
 ![Aletheia](docs/screenshot.png) -->
@@ -104,10 +117,10 @@ python3 aletheia.py --json     # machine-readable output
 python3 aletheia.py --list     # list discovered profiles
 ```
 
-## Contributing
+## Feedback
 
-Issues and PRs are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). The core
-guarantees (local-only, no secrets, no network) are non-negotiable.
+This project doesn't accept external contributions. If you've found a bug or
+want a feature, please [open an issue](https://github.com/rA9-001/Aletheia/issues).
 
 ## Security
 
@@ -116,8 +129,3 @@ Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
 ## License
 
 [MIT](LICENSE).
-
----
-
-*Aletheia (ἀλήθεια) is the Greek word for truth or disclosure — literally
-"un-concealment": revealing what your browser has quietly kept.*
