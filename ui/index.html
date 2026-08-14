@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aletheia</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+            <circle cx="12" cy="12" r="9" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </span>
+        <div>
+          <h1>Aletheia</h1>
+          <p class="tagline">Local browser privacy audit — reads only your own profiles</p>
+        </div>
+      </div>
+      <button id="scanBtn" class="scan-btn">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7" />
+          <path d="M21 21l-4.3-4.3" />
+        </svg>
+        <span class="scan-label">Scan browsers</span>
+      </button>
+    </header>
+
+    <section class="stats" id="stats" hidden>
+      <div class="stat">
+        <span class="stat-value" id="statProfiles">–</span>
+        <span class="stat-label">Profiles</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value stat-green" id="statLogins">–</span>
+        <span class="stat-label">Logged-in sites</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value stat-amber" id="statSaved">–</span>
+        <span class="stat-label">Saved passwords</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value stat-cyan" id="statCache">–</span>
+        <span class="stat-label">Total cache</span>
+      </div>
+    </section>
+
+    <main class="layout">
+      <aside class="sidebar" id="sidebar" hidden>
+        <div class="sidebar-head">Profiles</div>
+        <ul id="profileList"></ul>
+      </aside>
+
+      <div class="content">
+        <div id="empty" class="empty-state">
+          <div class="empty-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="9" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </div>
+          <h2>Ready when you are</h2>
+          <p>
+            Click <strong>Scan browsers</strong> to audit the browser profiles on this
+            machine. Nothing leaves your computer, and passwords are never read or
+            decrypted — only <em>which</em> sites you have sessions and credentials for.
+          </p>
+        </div>
+
+        <div id="report" hidden>
+          <div class="content-head">
+            <div>
+              <h2 id="reportTitle"></h2>
+              <p id="reportPath" class="muted"></p>
+            </div>
+            <input id="filter" class="filter" type="search" placeholder="Filter sites…" />
+          </div>
+          <div id="toolbar" class="toolbar"></div>
+          <div id="sections"></div>
+        </div>
+      </div>
+    </main>
+
+    <div id="loading" class="loading" hidden>
+      <div class="spinner"></div>
+      <span>Scanning profiles…</span>
+    </div>
+
+    <div id="modal" class="modal" hidden>
+      <div class="modal-card">
+        <h3 id="modalTitle">Confirm</h3>
+        <p id="modalBody"></p>
+        <div id="modalWarn" class="modal-warn" hidden></div>
+        <div class="modal-actions">
+          <button id="modalCancel" class="btn btn-ghost" type="button">Cancel</button>
+          <button id="modalConfirm" class="btn btn-danger" type="button">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" hidden></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

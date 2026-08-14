@@ -1,0 +1,26 @@
+# Rust / Tauri build output
+/src-tauri/target/
+**/target/
+
+# Tauri generated code (schemas, etc.)
+/src-tauri/gen/
+
+# Logs & temp
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.pyc
+
+# Node (not used, but just in case a frontend toolchain is added)
+node_modules/
+dist/
