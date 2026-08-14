@@ -15,7 +15,13 @@ fn main() {
             ("WEBKIT_DISABLE_COMPOSITING_MODE", "1"),
         ] {
             if std::env::var_os(k).is_none() {
-                std::env::set_var(k, v);
+                // Safe: this runs at the very start of `main`, before any
+                // threads are spawned, so there is no concurrent env access.
+                // (Also silences the Rust 2024 `deprecated_safe_2024` lint,
+                // where `set_var` becomes an unsafe function.)
+                unsafe {
+                    std::env::set_var(k, v);
+                }
             }
         }
     }
